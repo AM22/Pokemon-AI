@@ -1,0 +1,53 @@
+Metagross @ Metagrossite
+Ability: Clear Body
+EVs: 252 Atk / 4 SpD / 252 Spe
+Jolly Nature
+- Zen Headbutt
+- Earthquake
+- Meteor Mash
+- Bullet Punch
+
+Garchomp @ Rocky Helmet
+Ability: Rough Skin
+EVs: 248 HP / 252 Def / 8 SpD
+Impish Nature
+- Dragon Claw
+- Stealth Rock
+- Earthquake
+- Fire Blast
+
+Clefable @ Leftovers
+Ability: Magic Guard
+EVs: 252 HP / 252 Def / 4 SpD
+Bold Nature
+- Calm Mind
+- Thunderbolt
+- Ice Beam
+- Soft-Boiled
+
+Latios (M) @ Choice Specs
+Ability: Levitate
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Draco Meteor
+- Psychic
+- Surf
+- Defog
+
+Keldeo @ Choice Specs
+Ability: Justified
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Scald
+- Hidden Power [Grass]
+- Secret Sword
+- Hydro Pump
+
+Magnezone @ Choice Scarf
+Ability: Magnet Pull
+EVs: 252 SpA / 4 SpD / 252 Spe
+Timid Nature
+- Thunderbolt
+- Volt Switch
+- Flash Cannon
+- Hidden Power [Fire]
