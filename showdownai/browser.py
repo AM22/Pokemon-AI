@@ -149,7 +149,7 @@ class Selenium():
         while url1 == self.driver.current_url:
             time.sleep(1.5)
 
-    def start_challenge_battle(self, name, tier='ou'):
+    def start_challenge_battle(self, name, tier='gen6ou'):
         self.logger.info("Starting challenge battle!")
         lobby = self.driver.find_element_by_css_selector(".ilink[href='/lobby']")
         lobby.click()
@@ -171,11 +171,17 @@ class Selenium():
         tier = self.driver.find_element_by_css_selector("[name='selectFormat'][value='%s']" % tier)
         tier.click()
         time.sleep(2)
+        b = self.driver.find_element_by_xpath("//*[@id='room-']/div/div[1]/div[1]/div/div[1]/div[1]/form/p[3]/button")
+        b.click()
+        time.sleep(1)
+        t = self.driver.find_element_by_name("selectTeam")
+        t.click()
+        time.sleep(1)
         make_challenge = pm_window.find_element_by_css_selector("[name='makeChallenge']")
         make_challenge.click()
         self.logger.info("Sent a challenge!")
-        lobby_quit = self.driver.find_element_by_css_selector(".closebutton[href='/lobby']")
-        lobby_quit.click()
+#         lobby_quit = self.driver.find_element_by_css_selector(".closebutton[href='/lobby']")
+#         lobby_quit.click()
 
     def get_battle_id(self):
         url = self.driver.current_url
@@ -192,12 +198,12 @@ class Selenium():
         new_team.click()
         self.screenshot('log.png')
         time.sleep(3)
-        '''
-        format_button = self.driver.find_elements_by_css_selector(".select.formatselect.teambuilderformatselect[name='format']")
+
+        format_button = self.driver.find_element_by_css_selector(".select.formatselect.teambuilderformatselect[name='format']")
         format_button.click()
-        format_select = self.driver.find_elements_by_css_selector(".button[value='gen6ou']")
+        format_select = self.driver.find_element_by_xpath("/html/body/div[5]/ul[3]/li[6]/button")
         format_select.click()
-        '''
+
         import_button = self.driver.find_element_by_css_selector(".button[name='import']")
         import_button.click()
         self.screenshot('log.png')

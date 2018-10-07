@@ -228,28 +228,27 @@ class Showdown():
         self.selenium.make_team(self.team_text)
         self.selenium.screenshot('log.png')
 
-        '''
-        def update_monitor(self, done=False):
-            if self.monitor_url is not None:
-                self.logger.info("Updating online monitor at: %s",
-                                 self.monitor_url)
-                if done:
-                    status = 'done'
-                else:
-                    status = 'match'
-                data = {
-                    'username': self.username,
-                    'status': status,
-                    'scores': self.scores,
-                    'url': self.battle_url
-                }
-                try:
-                    url = self.monitor_url + "/api/update"
-                    headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-                    requests.post(url, data=json.dumps(data), headers=headers)
-                except:
-                    pass
-                '''
+    def update_monitor(self, done=False):
+        if self.monitor_url is not None:
+            self.logger.info("Updating online monitor at: %s",
+                             self.monitor_url)
+            if done:
+                status = 'done'
+            else:
+                status = 'match'
+            data = {
+                'username': self.username,
+                'status': status,
+                'scores': self.scores,
+                'url': self.battle_url
+            }
+            try:
+                url = self.monitor_url + "/api/update"
+                headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+                requests.post(url, data=json.dumps(data), headers=headers)
+            except:
+                pass
+
     def play_game(self, challenge=None):
         self.state.update_state("status", "finding_game")
         self.logger.info("Finding a game...")
@@ -394,10 +393,10 @@ class Showdown():
                 print("Crashed! - %s" % id)
                 print("---------------")
                 self.scores['crashes'] += 1
-                with open(user_folder / "crashes" / ("%s.log" % id), 'w') as fp:
-                    fp.write(log)
-                with open(user_folder / "crashes" / ("%s.err" % id), 'w') as fp:
-                    fp.write(error)
+#                 with open(user_folder / "crashes" / ("%s.log" % id), 'w') as fp:
+#                     fp.write(log)
+#                 with open(user_folder / "crashes" / ("%s.err" % id), 'w') as fp:
+#                     fp.write(error)
                 '''
                 with open(user_folder / "crashes" / ("%s.score" % id), 'w') as fp:
                     print(self.simulator.score, file = fp)
@@ -423,7 +422,7 @@ def main():
     argparser.add_argument('--team', default='blunder')
     argparser.add_argument('--username', default='maxtt')#default='hubbbb')
     argparser.add_argument('--password', default='python')#default='VouchSuperBohos+2')
-    argparser.add_argument('--iterations', type=int, default=2)
+    argparser.add_argument('--iterations', type=int, default=1)
     argparser.add_argument('--monitor_url', type=str, default='http://54.149.105.175:9000')
     argparser.add_argument('--challenge', type=str)
     argparser.add_argument('--proxy', action='store_true')
